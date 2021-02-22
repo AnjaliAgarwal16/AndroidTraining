@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Hello</string>
+    <string name="location_permission">Location Permission</string>
+    <string name="camera_permission">Camera Permission</string>
+    <string name="activity_2">Activity 2</string>
+
+
+
 </resources>
