@@ -18,6 +18,7 @@ import android.widget.Toast;
 public class Activity2 extends AppCompatActivity {
 
     private int loc_permission_code =1;
+    private int cam_permission_code =2;
 
 
 
@@ -43,6 +44,45 @@ public class Activity2 extends AppCompatActivity {
             }
 
         });
+        Button button_cam_req = findViewById(R.id.btn_camera);
+        button_cam_req.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ContextCompat.checkSelfPermission(Activity2.this, Manifest.permission.CAMERA)== PackageManager.PERMISSION_GRANTED)
+                {
+                    Toast.makeText(Activity2.this, "You have already granted permission to use camera", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    requestCameraPermission();
+                }
+
+            }
+
+        });
+    }
+    private void requestCameraPermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Permission Needed")
+                    .setMessage("This permission is needed for this reason")
+                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ActivityCompat.requestPermissions(Activity2.this, new String[]{Manifest.permission.CAMERA}, cam_permission_code);
+
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    })
+                    .create().show();
+        } else {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, cam_permission_code);
+        }
     }
 
     private void requestLocationPermission() {
@@ -74,10 +114,18 @@ public class Activity2 extends AppCompatActivity {
         if(requestCode == loc_permission_code )
         {
             if(grantResults.length>0 && grantResults [0] == PackageManager.PERMISSION_GRANTED)
-                Toast.makeText(this,"Permission Granted",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Permission Granted for location",Toast.LENGTH_SHORT).show();
             else
-                Toast.makeText(this,"Permission Denied",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Permission Denied for location",Toast.LENGTH_SHORT).show();
+        }
+        if(requestCode == cam_permission_code )
+        {
+            if(grantResults.length>0 && grantResults [0] == PackageManager.PERMISSION_GRANTED)
+                Toast.makeText(this,"Permission Granted for camera",Toast.LENGTH_SHORT).show();
+            else
+                Toast.makeText(this,"Permission Denied for camera",Toast.LENGTH_SHORT).show();
         }
 
     }
+
 }

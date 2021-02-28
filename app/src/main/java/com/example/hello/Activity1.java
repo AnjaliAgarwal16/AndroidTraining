@@ -11,21 +11,33 @@ import androidx.annotation.Nullable;
 
 public class Activity1 extends Activity {
     private Button button1;
+    private Button button2;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1);
         Log.d( "activity_lifecycle","onCeate called");
         button1 = (Button) findViewById(R.id.button1);
+        button2=(Button) findViewById(R.id.button2);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity2();
             }
         });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity3();
+            }
+        });
     }
     public void openActivity2() {
         Intent intent = new Intent (this,Activity2.class);
+        startActivity(intent);
+    }
+    public void openActivity3() {
+        Intent intent = new Intent (this,Activity3.class);
         startActivity(intent);
     }
 
