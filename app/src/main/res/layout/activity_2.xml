@@ -6,15 +6,15 @@
     android:paddingRight="16dp" >
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:id="@id/btn_location"
         android:text="Location Permision" />
 
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:id="@id/btn_camera"
         android:layout_below="@id/btn_location"
         android:text="Camera Permission" />

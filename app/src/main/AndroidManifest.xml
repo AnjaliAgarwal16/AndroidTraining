@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,20 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hello">
-        <activity android:name=".Activity4"></activity>
+        <activity android:name=".Activity5"></activity>
+        <activity android:name=".Activity4" />
         <activity
             android:name=".Activity3"
             android:label="@string/title_activity_3"
             android:theme="@style/Theme.Hello.NoActionBar" />
-        <activity android:name=".Activity2" />
+        <activity android:name=".Activity2"/>
+
+
         <activity android:name=".MainActivity" />
         <activity android:name=".Activity1">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
     </application>
 
 </manifest>

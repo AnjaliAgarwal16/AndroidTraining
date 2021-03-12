@@ -12,7 +12,7 @@ public class Activity4 extends AppCompatActivity {private TextView mTextViewCoun
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_4);
         mTextViewCount = findViewById(R.id.text_view_count);
         Button buttonDecrement = findViewById(R.id.button_decrement);
         Button buttonIncrement = findViewById(R.id.button_increment);
