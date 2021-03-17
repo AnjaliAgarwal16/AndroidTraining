@@ -6,14 +6,14 @@
     android:paddingRight="16dp" >
 
     <Button
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/btn_location"
-        android:text="Location Permision" />
+        android:text="Location Permission" />
 
 
     <Button
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/btn_camera"
         android:layout_below="@id/btn_location"

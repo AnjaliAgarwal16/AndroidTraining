@@ -1,6 +1,7 @@
 package com.example.hello;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,62 +11,36 @@ import android.util.Log;
 import java.util.ArrayList;
 
 public class Activity5 extends AppCompatActivity {
-    private static final String TAG = "Activity 5";
-    private ArrayList<String> mNames = new ArrayList<>();
-    private ArrayList<String> mImageUrls = new ArrayList<>();
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_5);
-        Log.d(TAG, "onCreate: started.");
+        //Log.d(TAG, "onCreate: started.");
 
-        initImageBitmaps();
-    }
+        //initImageBitmaps();
+        recyclerView = findViewById(R.id.rv);
+        ArrayList<Model> list = new ArrayList<>();
 
-    private void initImageBitmaps() {
-        Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
+        list.add(new Model(R.drawable.bangkok, "Bangkok"));
+        list.add(new Model(R.drawable.dubai, "Dubai"));
+        list.add(new Model(R.drawable.istanbul, "Istanbul"));
+        list.add(new Model(R.drawable.london, "London"));
+        list.add(new Model(R.drawable.mexico, "Mexico"));
+        list.add(new Model(R.drawable.nyc, "Ney York City"));
+        list.add(new Model(R.drawable.singapore, "Singapore"));
+        list.add(new Model(R.drawable.tokyo, "Tokyo"));
+        list.add(new Model(R.drawable.paris, "Paris"));
 
-        mImageUrls.add("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
-        mNames.add("Havasu Falls");
-
-        mImageUrls.add("https://i.redd.it/tpsnoz5bzo501.jpg");
-        mNames.add("Trondheim");
-
-        mImageUrls.add("https://i.redd.it/qn7f9oqu7o501.jpg");
-        mNames.add("Portugal");
-
-        mImageUrls.add("https://i.redd.it/j6myfqglup501.jpg");
-        mNames.add("Rocky Mountain National Park");
-
-
-        mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
-        mNames.add("Mahahual");
-
-        mImageUrls.add("https://i.redd.it/k98uzl68eh501.jpg");
-        mNames.add("Frozen Lake");
-
-
-        mImageUrls.add("https://i.redd.it/glin0nwndo501.jpg");
-        mNames.add("White Sands Desert");
-
-        mImageUrls.add("https://i.redd.it/obx4zydshg601.jpg");
-        mNames.add("Austrailia");
-
-        mImageUrls.add("https://i.imgur.com/ZcLLrkY.jpg");
-        mNames.add("Washington");
-
-        initRecyclerView();
-    }
-
-
-
-    private void initRecyclerView(){
-        Log.d(TAG, "initRecyclerView: init recyclerview.");
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mNames, mImageUrls);
+        RecyclerViewAdapter adapter= new RecyclerViewAdapter(list, this);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(gridLayoutManager);
     }
 }
+
+
+
 

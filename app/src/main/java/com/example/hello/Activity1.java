@@ -1,16 +1,15 @@
 package com.example.hello;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toolbar;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class Activity1 extends Activity {
+public class Activity1 extends AppCompatActivity {
     private Button button1;
     private Button button2;
     private Button button3;
