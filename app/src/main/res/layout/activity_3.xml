@@ -6,12 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activity3">
-    <FrameLayout
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/container1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <FrameLayout
+        android:layout_height="wrap_content"
+        android:name="com.example.hello.fragment1"/>
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/container2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:name="com.example.hello.fragment2"/>
 </LinearLayout>
