@@ -10,6 +10,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+//This activity demonstrates custom recycler view grid 
 public class Activity5 extends AppCompatActivity {
     RecyclerView recyclerView;
 
