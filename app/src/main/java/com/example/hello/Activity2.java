@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+//This class contains permission codes for camera and location access
+
 public class Activity2 extends AppCompatActivity {
 
     private int loc_permission_code =1;
