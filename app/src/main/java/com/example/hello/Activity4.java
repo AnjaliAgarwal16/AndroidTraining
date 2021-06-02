@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+//this screen has a counter to demonstrate that the changes done on the app do not get reset to default if the app runs in background. The activity doesn't restart itself.
+
 public class Activity4 extends AppCompatActivity {private TextView mTextViewCount;
     private int mCount;
     @Override
