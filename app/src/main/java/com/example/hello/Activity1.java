@@ -25,24 +25,32 @@ public class Activity1 extends AppCompatActivity {
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
         button4 = (Button) findViewById(R.id.button4);
+        
+        //button navigates to permission code checking
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity2();
             }
         });
+        
+        //button navigates to fragment transitions and data passing
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity3();
             }
         });
+        
+        //button navigates to counter page to check app runs in background without reset
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity4();
             }
         });
+        
+        //button navigates to custom recyclerview grid 
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
