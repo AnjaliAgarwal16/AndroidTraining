@@ -9,6 +9,8 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+//This is the home screen which displays when the app is launched
+
 public class Activity1 extends AppCompatActivity {
     private Button button1;
     private Button button2;
