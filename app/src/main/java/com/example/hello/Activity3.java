@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//This class demonstrates navigation between fragments and pasing of data between them
+
 public class Activity3 extends AppCompatActivity implements fragment1.Fragment1Listener, fragment2.Fragment2Listener{
 
     private fragment1 Fragment1;
